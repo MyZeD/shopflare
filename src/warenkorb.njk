@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+pageTitle: Warenkorb - Shopflare Demo
+permalink: "/warenkorb/index.html"
+---
+
+<section class="hero is-light">
+  <div class="hero-body container">
+    <p class="title">Warenkorb</p>
+  </div>
+</section>
+
+<main class="section">
+  <div class="container" x-data>
+    <div class="box" x-show="$store.cart.items.length === 0">
+      <p class="title is-6">Dein Warenkorb ist leer.</p>
+      <p class="mb-4">Füge auf der Startseite oder in den Produktdetails Demo-Artikel hinzu.</p>
+      <a class="button is-link is-light" href="/">Zur Produktübersicht</a>
+    </div>
+
+    <div x-show="$store.cart.items.length > 0">
+      <div class="box">
+        <div class="table-container">
+          <table class="table is-fullwidth is-striped">
+            <thead>
+              <tr>
+                <th>Produkt</th>
+                <th>Preis</th>
+                <th style="width: 220px;">Menge</th>
+                <th>Summe</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="item in $store.cart.items" :key="item.slug">
+                <tr>
+                  <td>
+                    <strong x-text="item.title"></strong>
+                  </td>
+                  <td x-text="item.price"></td>
+                  <td>
+                    <div class="field has-addons">
+                      <p class="control">
+                        <button class="button is-small" @click="$store.cart.decrease(item.slug)">-</button>
+                      </p>
+                      <p class="control is-expanded">
+                        <input
+                          class="input is-small"
+                          type="number"
+                          min="1"
+                          :value="item.qty"
+                          @input="$store.cart.setQty(item.slug, $event.target.value)">
+                      </p>
+                      <p class="control">
+                        <button class="button is-small" @click="$store.cart.increase(item.slug)">+</button>
+                      </p>
+                    </div>
+                  </td>
+                  <td x-text="$store.cart.itemTotalDisplay(item)"></td>
+                  <td class="has-text-right">
+                    <button class="button is-small is-danger is-light" @click="$store.cart.remove(item.slug)">Entfernen</button>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <p class="title is-5 mb-0">Gesamtsumme (Demo): <span x-text="$store.cart.subtotalDisplay"></span></p>
+          </div>
+          <div class="level-right">
+            <div class="buttons">
+              <button class="button is-light" @click="$store.cart.clear()">Warenkorb leeren</button>
+              <a class="button is-link" href="/">Weiter einkaufen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

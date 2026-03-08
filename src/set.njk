@@ -1,0 +1,334 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: sets
+  size: 1
+  alias: setGroup
+permalink: "/{{ setGroup.gameSlug }}/{{ setGroup.slug }}/index.html"
+eleventyComputed:
+  pageTitle: "Shopflare - {{ setGroup.gameName }} - {{ setGroup.name }}"
+---
+<section class="hero is-light">
+  <div class="hero-body container">
+    <p class="title">{{ setGroup.gameName }} -> {{ setGroup.name }}</p>
+  </div>
+</section>
+
+<main class="section" x-data="shopFilters()" x-init="init()">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/{{ setGroup.gameSlug }}/">{{ setGroup.gameName }}</a></li>
+        <li class="is-active"><a href="#" aria-current="page">{{ setGroup.name }}</a></li>
+      </ul>
+    </nav>
+
+    <details class="box mb-5" open>
+      <summary class="is-flex is-justify-content-space-between is-align-items-center mb-4" style="cursor:pointer;">
+        <span class="title is-5 mb-0">Filter nach Attributen</span>
+        <span class="tag is-info is-light"><span x-text="visibleCount"></span> Produkte sichtbar</span>
+      </summary>
+
+      <template x-if="Object.keys(filterOptions).length === 0">
+        <p class="is-size-7 has-text-grey">Keine Attribute gefunden.</p>
+      </template>
+
+      <div class="columns is-multiline is-variable is-3">
+        <template x-for="entry in Object.entries(filterOptions)" :key="entry[0]">
+          <div class="column is-12-tablet is-6-desktop is-4-widescreen">
+            <div class="mb-4">
+              <div class="tags" x-show="attributeTypes[entry[0]] === 'value'">
+                <template x-for="value in entry[1]" :key="entry[0] + ':' + value">
+                  <button
+                    class="tag is-clickable"
+                    :class="optionClass(entry[0], value)"
+                    :style="optionState(entry[0], value) === 'incompatible' ? 'opacity:0.45;' : ''"
+                    @click="toggleFilter(entry[0], value)">
+                    <span x-text="value"></span>
+                  </button>
+                </template>
+              </div>
+
+              <div class="field is-grouped" x-show="attributeTypes[entry[0]] === 'range'">
+                <p class="control is-expanded">
+                  <input
+                    class="input is-small"
+                    type="number"
+                    step="0.01"
+                    :placeholder="'Von (' + formatRangeBoundary(entry[0], 'min') + ')'"
+                    :value="rangeFilters[entry[0]]?.min || ''"
+                    @input="setRangeValue(entry[0], 'min', $event.target.value)">
+                </p>
+                <p class="control is-expanded">
+                  <input
+                    class="input is-small"
+                    type="number"
+                    step="0.01"
+                    :placeholder="'Bis (' + formatRangeBoundary(entry[0], 'max') + ')'"
+                    :value="rangeFilters[entry[0]]?.max || ''"
+                    @input="setRangeValue(entry[0], 'max', $event.target.value)">
+                </p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <button class="button is-small is-light" @click="clearFilters()">Filter zurücksetzen</button>
+    </details>
+
+    <div class="columns is-multiline">
+      {% for product in setGroup.products %}
+      <div
+        class="column is-4"
+        data-product-card
+        data-attributes="{% for key, value in product.attributes %}{{ key }}:{{ value }}{% if not loop.last %}||{% endif %}{% endfor %}"
+        x-show="isVisible($el.dataset.attributes)">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3 has-background-grey-lighter flex-center"></figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">{{ product.title }}</p>
+            <div class="level">
+              <div class="level-left">
+                <span class="tag is-success is-large">{{ product.price }}</span>
+              </div>
+              <div class="level-right">
+                <a class="button is-dark is-small" href="/item/{{ product.slug }}/">Details</a>
+              </div>
+            </div>
+            <div class="tags mt-2">
+              {% for key, value in product.attributes %}
+              <span class="tag is-light">{{ key }}: {{ value }}</span>
+              {% endfor %}
+            </div>
+            <button
+              class="button is-link is-light is-small mt-3"
+              @click="$store.cart.add({ slug: '{{ product.slug }}', title: '{{ product.title }}', price: '{{ product.price }}' })">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+<script>
+  function shopFilters() {
+    return {
+      filterTypeConfig: {
+        Preis: 'range'
+      },
+      selected: {},
+      filterOptions: {},
+      attributeTypes: {},
+      numericBounds: {},
+      rangeFilters: {},
+      products: [],
+      visibleCount: 0,
+      init() {
+        const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+        const options = {};
+        this.products = cards.map((card) => ({
+          attrs: this.parseAttributes(card.dataset.attributes || '')
+        }));
+
+        this.products.forEach((product) => {
+          Object.entries(product.attrs).forEach(([key, value]) => {
+            if (!key || !value) {
+              return;
+            }
+
+            if (!options[key]) {
+              options[key] = new Set();
+            }
+            options[key].add(value);
+          });
+        });
+
+        const normalized = {};
+        Object.keys(options).forEach((key) => {
+          normalized[key] = Array.from(options[key]).sort((a, b) => a.localeCompare(b, 'de'));
+          const allNumeric = normalized[key].every((value) => this.toNumber(value) !== null);
+          if (allNumeric) {
+            const values = normalized[key].map((value) => this.toNumber(value));
+            this.numericBounds[key] = {
+              min: Math.min(...values),
+              max: Math.max(...values)
+            };
+          }
+
+          this.attributeTypes[key] = this.resolveAttributeType(key);
+          this.rangeFilters[key] = { min: '', max: '' };
+        });
+
+        this.filterOptions = normalized;
+        this.updateVisibleCount();
+      },
+      supportsRange(key) {
+        return !!this.numericBounds[key];
+      },
+      resolveAttributeType(key) {
+        const configuredType = this.filterTypeConfig[key];
+        if (configuredType === 'range' && this.supportsRange(key)) {
+          return 'range';
+        }
+        return 'value';
+      },
+      toggleFilter(key, value) {
+        if (this.attributeTypes[key] !== 'value') {
+          return;
+        }
+
+        if (this.selected[key] === value) {
+          delete this.selected[key];
+        } else {
+          this.selected[key] = value;
+        }
+        this.selected = { ...this.selected };
+        this.updateVisibleCount();
+      },
+      setRangeValue(key, boundary, value) {
+        if (!this.rangeFilters[key]) {
+          this.rangeFilters[key] = { min: '', max: '' };
+        }
+
+        this.rangeFilters[key][boundary] = value;
+        this.rangeFilters = { ...this.rangeFilters };
+        this.updateVisibleCount();
+      },
+      clearFilters() {
+        this.selected = {};
+        Object.keys(this.rangeFilters).forEach((key) => {
+          this.rangeFilters[key] = { min: '', max: '' };
+        });
+        this.rangeFilters = { ...this.rangeFilters };
+        this.updateVisibleCount();
+      },
+      parseAttributes(rawAttributes) {
+        const parsed = {};
+        (rawAttributes || '').split('||').forEach((pair) => {
+          const separator = pair.indexOf(':');
+          if (separator === -1) {
+            return;
+          }
+
+          const key = pair.slice(0, separator).trim();
+          const value = pair.slice(separator + 1).trim();
+          if (key && value) {
+            parsed[key] = value;
+          }
+        });
+        return parsed;
+      },
+      toNumber(value) {
+        if (typeof value !== 'string') {
+          return null;
+        }
+
+        let normalized = value.replace(/\s/g, '').replace(/[^0-9.,-]/g, '');
+
+        if (normalized.includes(',') && normalized.includes('.')) {
+          if (normalized.lastIndexOf(',') > normalized.lastIndexOf('.')) {
+            normalized = normalized.replace(/\./g, '').replace(',', '.');
+          } else {
+            normalized = normalized.replace(/,/g, '');
+          }
+        } else if (normalized.includes(',')) {
+          normalized = normalized.replace(',', '.');
+        }
+
+        const numeric = Number.parseFloat(normalized);
+        return Number.isFinite(numeric) ? numeric : null;
+      },
+      isWithinRange(key, value) {
+        if (this.attributeTypes[key] !== 'range') {
+          return true;
+        }
+
+        const numericValue = this.toNumber(value);
+        if (numericValue === null) {
+          return false;
+        }
+
+        const minRaw = this.rangeFilters[key]?.min;
+        const maxRaw = this.rangeFilters[key]?.max;
+        const min = minRaw === '' ? null : Number.parseFloat(minRaw);
+        const max = maxRaw === '' ? null : Number.parseFloat(maxRaw);
+
+        if (min !== null && numericValue < min) {
+          return false;
+        }
+        if (max !== null && numericValue > max) {
+          return false;
+        }
+        return true;
+      },
+      matchesActiveFilters(parsed, skipKey = null) {
+        const activeKeys = Object.keys(this.selected);
+        for (const key of activeKeys) {
+          if (key === skipKey || this.attributeTypes[key] !== 'value') {
+            continue;
+          }
+          if (parsed[key] !== this.selected[key]) {
+            return false;
+          }
+        }
+
+        for (const key of Object.keys(this.attributeTypes)) {
+          if (key === skipKey || this.attributeTypes[key] !== 'range') {
+            continue;
+          }
+          if (!this.isWithinRange(key, parsed[key])) {
+            return false;
+          }
+        }
+
+        return true;
+      },
+      isVisible(rawAttributes) {
+        const parsed = this.parseAttributes(rawAttributes);
+        return this.matchesActiveFilters(parsed);
+      },
+      isValueCompatible(key, value) {
+        return this.products.some((product) => {
+          if (product.attrs[key] !== value) {
+            return false;
+          }
+          return this.matchesActiveFilters(product.attrs, key);
+        });
+      },
+      optionState(key, value) {
+        if (this.selected[key] === value) {
+          return 'selected';
+        }
+        return this.isValueCompatible(key, value) ? 'compatible' : 'incompatible';
+      },
+      optionClass(key, value) {
+        const state = this.optionState(key, value);
+        if (state === 'selected') {
+          return 'is-link';
+        }
+        if (state === 'compatible') {
+          return 'is-success is-light';
+        }
+        return 'is-light has-text-grey';
+      },
+      formatRangeBoundary(key, boundary) {
+        if (!this.numericBounds[key]) {
+          return '';
+        }
+        const value = this.numericBounds[key][boundary];
+        return Number.isFinite(value) ? value.toString().replace('.', ',') : '';
+      },
+      updateVisibleCount() {
+        const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+        this.visibleCount = cards.filter((card) => this.isVisible(card.dataset.attributes)).length;
+      }
+    };
+  }
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pageTitle %}{{ pageTitle }}{% elif product %}Shopflare - {{ product.title }} (DEMO){% else %}Shopflare - DEMO Projekt{% endif %}</title>
+
+    <link rel="stylesheet" href="/assets/bulma.min.css" />
+    <script defer src="/assets/cdn.min.js"></script>
+</head>
+  <body x-data>
+    <div class="notification is-warning is-marginless has-text-centered is-radiusless">
+      <strong>HINWEIS:</strong> Dieser Webauftritt ist ein Prototyp/Demo-Shop; es können keine Bestellungen ausgeführt werden.<br>
+      Der vollständige Quellcode ist öffentlich auf GitHub verfügbar (Link im Footer).<br>
+      Der Prototyp wurde als flexible, schnell anpassbare und leistungsfähige Grundlage entwickelt und legt besonderen Wert auf Sicherheit. Bei Interesse oder Fragen kontaktieren Sie mich bitte.
+    </div>
+
+    <nav class="navbar is-white shadow" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/"><strong>Shopflare - DEMO Projekt</strong></a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-link" href="/warenkorb/">
+                <strong>Warenkorb (<span x-text="$store.cart.count"></span>)</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {{ content | safe }}
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a> | <a href="https://github.com/MyZeD/shopflare" target="_blank" rel="noopener noreferrer">Github</a>
+        </p>
+        <p class="is-size-7">
+          &copy; 2026 Shopflare - DEMO Projekt.
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.store('cart', {
+          items: [],
+          persist() {
+            localStorage.setItem('shopflare-cart', JSON.stringify(this.items));
+          },
+          toNumber(value) {
+            if (typeof value !== 'string') {
+              return 0;
+            }
+
+            let normalized = value.replace(/\s/g, '').replace(/[^0-9.,-]/g, '');
+
+            if (normalized.includes(',') && normalized.includes('.')) {
+              if (normalized.lastIndexOf(',') > normalized.lastIndexOf('.')) {
+                normalized = normalized.replace(/\./g, '').replace(',', '.');
+              } else {
+                normalized = normalized.replace(/,/g, '');
+              }
+            } else if (normalized.includes(',')) {
+              normalized = normalized.replace(',', '.');
+            }
+
+            const parsed = Number.parseFloat(normalized);
+            return Number.isFinite(parsed) ? parsed : 0;
+          },
+          formatPrice(value) {
+            return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(value);
+          },
+          init() {
+            try {
+              const savedItems = localStorage.getItem('shopflare-cart');
+              const rawItems = savedItems ? JSON.parse(savedItems) : [];
+              this.items = rawItems
+                .filter((item) => item && item.slug && item.title && item.price)
+                .map((item) => ({
+                  ...item,
+                  qty: Number.isInteger(item.qty) && item.qty > 0 ? item.qty : 1
+                }));
+            } catch (error) {
+              this.items = [];
+            }
+            this.persist();
+          },
+          get count() {
+            return this.items.reduce((sum, item) => sum + item.qty, 0);
+          },
+          get subtotal() {
+            return this.items.reduce((sum, item) => sum + (this.toNumber(item.price) * item.qty), 0);
+          },
+          get subtotalDisplay() {
+            return this.formatPrice(this.subtotal);
+          },
+          add(product) {
+            const existing = this.items.find((item) => item.slug === product.slug);
+            if (existing) {
+              existing.qty += 1;
+            } else {
+              this.items.push({ ...product, qty: 1 });
+            }
+            this.persist();
+          },
+          remove(slug) {
+            this.items = this.items.filter((item) => item.slug !== slug);
+            this.persist();
+          },
+          setQty(slug, qty) {
+            const parsedQty = Number.parseInt(qty, 10);
+            const item = this.items.find((entry) => entry.slug === slug);
+            if (!item) {
+              return;
+            }
+
+            if (!Number.isFinite(parsedQty) || parsedQty <= 0) {
+              this.remove(slug);
+              return;
+            }
+
+            item.qty = parsedQty;
+            this.items = [...this.items];
+            this.persist();
+          },
+          increase(slug) {
+            const item = this.items.find((entry) => entry.slug === slug);
+            if (!item) {
+              return;
+            }
+            item.qty += 1;
+            this.items = [...this.items];
+            this.persist();
+          },
+          decrease(slug) {
+            const item = this.items.find((entry) => entry.slug === slug);
+            if (!item) {
+              return;
+            }
+            if (item.qty <= 1) {
+              this.remove(slug);
+              return;
+            }
+            item.qty -= 1;
+            this.items = [...this.items];
+            this.persist();
+          },
+          itemTotalDisplay(item) {
+            return this.formatPrice(this.toNumber(item.price) * item.qty);
+          },
+          clear() {
+            this.items = [];
+            this.persist();
+          }
+        });
+
+        Alpine.store('cart').init();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "/item/{{ product.slug }}/index.html"
+---
+<section class="hero is-light">
+      <div class="hero-body container">
+        <p class="title">Produktdetails</p>
+      </div>
+    </section>
+
+    <main class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/">Startseite</a></li>
+            <li class="is-active"><a href="#" aria-current="page">{{ product.title }}</a></li>
+          </ul>
+        </nav>
+
+        <div class="columns">
+          <div class="column is-5">
+            <figure class="image is-4by3 has-background-grey-lighter"></figure>
+          </div>
+
+          <div class="column is-7">
+            <h1 class="title">{{ product.title }}</h1>
+
+            <div class="mb-4">
+              <span class="tag is-success is-large">{{ product.price }}</span>
+              <span class="tag is-light">SKU: {{ product.sku }}</span>
+            </div>
+
+            <div class="content">
+              <p>{{ product.description }}</p>
+            </div>
+
+            <div class="content">
+              <h2 class="title is-6">Attribute</h2>
+              <div class="tags">
+                {% for key, value in product.attributes %}
+                <span class="tag is-link is-light">{{ key }}: {{ value }}</span>
+                {% endfor %}
+              </div>
+            </div>
+
+            {% if product.content and product.content | length %}
+            <div class="content">
+              <h2 class="title is-6">Inhalt</h2>
+              <ul>
+                {% for item in product.content %}
+                  {% if item.type == 'booster-pack' %}
+                  <li>{{ item.quantity }}x {{ item.type }}: <a href="/item/{{ item.content }}/">{{ item.content }}</a></li>
+                  {% else %}
+                  <li>{{ item.quantity }}x {{ item.type }}: {{ item.content }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+
+            <div class="buttons">
+              <button
+                class="button is-dark"
+                @click="$store.cart.add({ slug: '{{ product.slug }}', title: '{{ product.title }}', price: '{{ product.price }}' })">
+                In den Warenkorb
+              </button>
+              <a class="button is-light" href="/">Zurück zur Übersicht</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>

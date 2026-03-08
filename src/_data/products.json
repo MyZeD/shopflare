@@ -1,0 +1,819 @@
+[
+  {
+    "slug": "obsidian-embers-elite-trainer-box",
+    "title": "Obsidian Embers Elite Trainer Box",
+    "shortText": "Versiegelte ETB mit Boosterpacks und Zubehoer.",
+    "price": "59,00 €",
+    "sku": "TCG-001",
+    "attributes": {
+      "Preis": "59.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Elite Trainer Box",
+      "Sprache": "Englisch",
+      "Edition": "Obsidian Embers",
+      "Set": "Obsidian Embers"
+    },
+    "description": "Original versiegelte Elite Trainer Box aus Obsidian Embers fuer Sammlung und Opening.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "obsidian-embers-booster-pack",
+        "quantity": 9
+      },
+      {
+        "type": "zubehoer",
+        "content": "wuerfel",
+        "quantity": 1
+      },
+      {
+        "type": "zubehoer",
+        "content": "kartenhuellen",
+        "quantity": 65
+      }
+    ]
+  },
+  {
+    "slug": "paldea-ascendancy-booster-bundle",
+    "title": "Paldea Ascendancy Booster Bundle",
+    "shortText": "Sealed Bundle fuer AetherBeasts Openings.",
+    "price": "39,00 €",
+    "sku": "TCG-002",
+    "attributes": {
+      "Preis": "39.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Bundle",
+      "Sprache": "Deutsch",
+      "Edition": "Paldea Ascendancy",
+      "Set": "Paldea Ascendancy"
+    },
+    "description": "Versiegeltes Booster Bundle mit mehreren Packs aus Paldea Ascendancy.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "paldea-ascendancy-booster-pack",
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "slug": "aetherbeasts-151-booster-bundle",
+    "title": "AetherBeasts 151 Booster Bundle",
+    "shortText": "Versiegeltes Bundle fuer nostalgische Kanto-Openings.",
+    "price": "44,00 €",
+    "sku": "TCG-003",
+    "attributes": {
+      "Preis": "44.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Bundle",
+      "Sprache": "Englisch",
+      "Edition": "Crimson Violet 151",
+      "Set": "Crimson Violet 151"
+    },
+    "description": "Sealed Booster Bundle mit 6 Boostern aus dem AetherBeasts 151 Set.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "aetherbeasts-151-booster-pack",
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "slug": "gardevoir-ex-guildbound-deck",
+    "title": "Gardevoir ex Guildbound Deck",
+    "shortText": "Spielbereites Deck fuer den direkten Einstieg.",
+    "price": "34,00 €",
+    "sku": "TCG-004",
+    "attributes": {
+      "Preis": "34.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Deck",
+      "Sprache": "Deutsch",
+      "Edition": "Guildbound Deck",
+      "Deckgroesse": "60 Karten",
+      "Spielbereit": "Ja"
+    },
+    "description": "Komplettes vorkonstruiertes Deck mit Fokus auf Gardevoir ex Strategien.",
+    "content": []
+  },
+  {
+    "slug": "dominus-reclaimed-set-booster-box",
+    "title": "Dominus Reclaimed Set Booster Box",
+    "shortText": "Versiegeltes Display fuer MTG Openings.",
+    "price": "129,00 €",
+    "sku": "TCG-005",
+    "attributes": {
+      "Preis": "129.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Dominus Reclaimed",
+      "Set": "Dominus Reclaimed"
+    },
+    "description": "Sealed Set Booster Display aus Dominus Reclaimed fuer Sammler und Spieler.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "dominus-reclaimed-set-booster-pack",
+        "quantity": 30
+      }
+    ]
+  },
+  {
+    "slug": "horizons-reforged-draft-booster-box",
+    "title": "Horizons Reforged Draft Booster Box",
+    "shortText": "Draft Display mit hoher Kartenvielfalt.",
+    "price": "219,00 €",
+    "sku": "TCG-006",
+    "attributes": {
+      "Preis": "219.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Horizons Reforged",
+      "Set": "Horizons Reforged"
+    },
+    "description": "Original versiegeltes Draft Display aus Horizons Reforged.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "horizons-reforged-draft-booster-pack",
+        "quantity": 36
+      }
+    ]
+  },
+  {
+    "slug": "the-lord-of-the-rings-set-booster-box",
+    "title": "The Lord of the Rings Set Booster Box",
+    "shortText": "Sealed Display fuer Draft, Sammlung und Openings.",
+    "price": "174,00 €",
+    "sku": "TCG-007",
+    "attributes": {
+      "Preis": "174.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Chronicles of Eldermoor",
+      "Set": "Chronicles of Eldermoor"
+    },
+    "description": "Set Booster Display aus dem Herr-der-Ringe Crossover fuer MTG.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "chronicles-of-eldermoor-set-booster-pack",
+        "quantity": 30
+      }
+    ]
+  },
+  {
+    "slug": "warlord-ascendancy-precon-eldrazi-unbound",
+    "title": "Warlord Ascendancy Precon - Eldrazi Unbound",
+    "shortText": "Vorkonstruiertes Commander Deck mit Eldrazi-Thema.",
+    "price": "88,00 €",
+    "sku": "TCG-008",
+    "attributes": {
+      "Preis": "88.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Commander Deck",
+      "Sprache": "Englisch",
+      "Edition": "Warlord Ascendancy",
+      "Deckgroesse": "100 Karten",
+      "Format": "Commander"
+    },
+    "description": "Beliebtes Commander Precon mit starken Upgrades und klarer Synergie.",
+    "content": []
+  },
+  {
+    "slug": "azure-eye-chronicles-booster-box",
+    "title": "Azure-Eye Chronicles Booster Box",
+    "shortText": "Klassisches YGO Display, komplett versiegelt.",
+    "price": "149,00 €",
+    "sku": "TCG-009",
+    "attributes": {
+      "Preis": "149.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Azure-Eye Chronicles",
+      "Set": "Azure-Eye White Drake"
+    },
+    "description": "Sealed Booster Box aus der legendaeren LOB-Edition.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "azure-eye-chronicles-booster-pack",
+        "quantity": 24
+      }
+    ]
+  },
+  {
+    "slug": "cinematic-gold-edition-booster-box",
+    "title": "Cinematic Gold Edition Booster Box",
+    "shortText": "Versiegeltes Display mit Movie-Pack Kartenpool.",
+    "price": "89,00 €",
+    "sku": "TCG-010",
+    "attributes": {
+      "Preis": "89.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Cinematic Gold Edition",
+      "Set": "Cinematic Gold Edition"
+    },
+    "description": "Sealed Box fuer Sammler der Cinematic Gold Edition.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "cinematic-gold-edition-booster-pack",
+        "quantity": 24
+      }
+    ]
+  },
+  {
+    "slug": "runicduels-silver-jubilee-rarity-collection-box",
+    "title": "RunicDuels Silver Jubilee Rarity Collection Box",
+    "shortText": "Versiegelte Box mit Premium-Raritaeten.",
+    "price": "78,00 €",
+    "sku": "TCG-011",
+    "attributes": {
+      "Preis": "78.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Deutsch",
+      "Edition": "Silver Jubilee Rarity Collection"
+    },
+    "description": "Premium-Produkt mit mehreren Foil-Stufen fuer Sammler und Trader.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "runicduels-silver-jubilee-rarity-collection-booster-pack",
+        "quantity": 24
+      }
+    ]
+  },
+  {
+    "slug": "ember-sovereigns-structure-deck",
+    "title": "Ember Sovereigns Structure Deck",
+    "shortText": "Meta-relevantes Structure Deck als Einstieg oder Upgrade-Basis.",
+    "price": "11,00 €",
+    "sku": "TCG-012",
+    "attributes": {
+      "Preis": "11.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Structure Deck",
+      "Sprache": "Deutsch",
+      "Edition": "Ember Sovereigns",
+      "Deckgroesse": "40+ Karten",
+      "Spielbereit": "Ja"
+    },
+    "description": "Strukturdeck mit solider Basis fuer kompetitives oder casuales Spiel.",
+    "content": []
+  },
+  {
+    "slug": "obsidian-embers-booster-bundle",
+    "title": "Obsidian Embers Booster Bundle",
+    "shortText": "Kompaktes Sealed Produkt fuer schnelle Openings.",
+    "price": "34,00 €",
+    "sku": "TCG-013",
+    "attributes": {
+      "Preis": "34.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Bundle",
+      "Sprache": "Deutsch",
+      "Edition": "Obsidian Embers",
+      "Set": "Obsidian Embers"
+    },
+    "description": "Versiegeltes Booster Bundle aus Obsidian Embers mit solider Preis-Leistung.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "obsidian-embers-booster-pack",
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "slug": "paldea-ascendancy-elite-trainer-box",
+    "title": "Paldea Ascendancy Elite Trainer Box",
+    "shortText": "ETB mit Boosterpacks, Sleeves und Promo.",
+    "price": "57,00 €",
+    "sku": "TCG-014",
+    "attributes": {
+      "Preis": "57.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Elite Trainer Box",
+      "Sprache": "Englisch",
+      "Edition": "Paldea Ascendancy",
+      "Set": "Paldea Ascendancy"
+    },
+    "description": "Versiegelte ETB aus Paldea Ascendancy fuer Sammler und Spieler.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "paldea-ascendancy-booster-pack",
+        "quantity": 9
+      }
+    ]
+  },
+  {
+    "slug": "aetherbeasts-151-ultra-premium-collection",
+    "title": "AetherBeasts 151 Ultra Premium Collection",
+    "shortText": "Groesse Sealed Box mit exklusiven Inhalten.",
+    "price": "129,00 €",
+    "sku": "TCG-015",
+    "attributes": {
+      "Preis": "129.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Premium Collection",
+      "Sprache": "Englisch",
+      "Edition": "Crimson Violet 151",
+      "Set": "Crimson Violet 151"
+    },
+    "description": "Premium Collection fuer AetherBeasts 151 mit hochwertigem Zubehoer und Boostern.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "aetherbeasts-151-booster-pack",
+        "quantity": 16
+      },
+      {
+        "type": "zubehoer",
+        "content": "metallwuerfel",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "miraidon-ex-guildbound-deck",
+    "title": "Miraidon ex Guildbound Deck",
+    "shortText": "Turniernahes Deck als Sealed Produkt.",
+    "price": "36,00 €",
+    "sku": "TCG-016",
+    "attributes": {
+      "Preis": "36.00",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Deck",
+      "Sprache": "Englisch",
+      "Edition": "Guildbound Deck",
+      "Deckgroesse": "60 Karten",
+      "Spielbereit": "Ja"
+    },
+    "description": "Spielbereites Guildbound Deck fuer einen schnellen Einstieg.",
+    "content": []
+  },
+  {
+    "slug": "dominus-reclaimed-collector-booster-box",
+    "title": "Dominus Reclaimed Collector Booster Box",
+    "shortText": "Premium Sealed Display mit Collector Boostern.",
+    "price": "229,00 €",
+    "sku": "TCG-017",
+    "attributes": {
+      "Preis": "229.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Dominus Reclaimed",
+      "Set": "Dominus Reclaimed"
+    },
+    "description": "Versiegelte Collector Booster Box aus Dominus Reclaimed.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "dominus-reclaimed-collector-booster-pack",
+        "quantity": 12
+      }
+    ]
+  },
+  {
+    "slug": "horizons-reforged-set-booster-box",
+    "title": "Horizons Reforged Set Booster Box",
+    "shortText": "Set-Booster Display fuer Sealed Fans.",
+    "price": "199,00 €",
+    "sku": "TCG-018",
+    "attributes": {
+      "Preis": "199.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Horizons Reforged",
+      "Set": "Horizons Reforged"
+    },
+    "description": "Versiegeltes Set Booster Display fuer Horizons Reforged.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "horizons-reforged-set-booster-pack",
+        "quantity": 30
+      }
+    ]
+  },
+  {
+    "slug": "chronicles-of-eldermoor-collector-booster-box",
+    "title": "Chronicles of Eldermoor Collector Booster Box",
+    "shortText": "Premium Display fuer LOTR Sammler.",
+    "price": "319,00 €",
+    "sku": "TCG-019",
+    "attributes": {
+      "Preis": "319.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Chronicles of Eldermoor",
+      "Set": "Chronicles of Eldermoor"
+    },
+    "description": "Collector Booster Box mit exklusiven Treatments aus dem LOTR Set.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "chronicles-of-eldermoor-collector-booster-pack",
+        "quantity": 12
+      }
+    ]
+  },
+  {
+    "slug": "warlord-ascendancy-collector-booster-pack",
+    "title": "Warlord Ascendancy Collector Booster Pack",
+    "shortText": "Einzeln versiegelter Collector Booster.",
+    "price": "49,00 €",
+    "sku": "TCG-020",
+    "attributes": {
+      "Preis": "49.00",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Warlord Ascendancy",
+      "Set": "Warlord Ascendancy"
+    },
+    "description": "Versiegelter Einzelpack aus Warlord Ascendancy fuer Premium-Pulls.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "warlord-ascendancy-collector-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "azure-eye-chronicles-25th-reprint-box",
+    "title": "Azure-Eye Chronicles 25th Reprint Box",
+    "shortText": "Sealed Reprint-Display der LOB Edition.",
+    "price": "99,00 €",
+    "sku": "TCG-021",
+    "attributes": {
+      "Preis": "99.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Deutsch",
+      "Edition": "Azure-Eye Chronicles",
+      "Set": "Azure-Eye Chronicles"
+    },
+    "description": "Versiegelte Reprint-Box fuer Fans der klassischen LOB Karten.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "azure-eye-chronicles-booster-pack",
+        "quantity": 24
+      }
+    ]
+  },
+  {
+    "slug": "cinematic-gold-edition-mini-box",
+    "title": "Cinematic Gold Edition Mini Box",
+    "shortText": "Kleinere Sealed Box aus der Movie Edition.",
+    "price": "29,00 €",
+    "sku": "TCG-022",
+    "attributes": {
+      "Preis": "29.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Deutsch",
+      "Edition": "Cinematic Gold Edition",
+      "Set": "Cinematic Gold Edition"
+    },
+    "description": "Versiegelte Mini Box fuer sammelorientierte Openings.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "cinematic-gold-edition-booster-pack",
+        "quantity": 8
+      }
+    ]
+  },
+  {
+    "slug": "runicduels-silver-jubilee-rarity-collection-box-en",
+    "title": "RunicDuels Silver Jubilee Rarity Collection Box (EN)",
+    "shortText": "Englische Sealed Version der Rarity Collection.",
+    "price": "81,00 €",
+    "sku": "TCG-023",
+    "attributes": {
+      "Preis": "81.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Box",
+      "Sprache": "Englisch",
+      "Edition": "Silver Jubilee Rarity Collection",
+      "Set": "Silver Jubilee Rarity Collection"
+    },
+    "description": "Englische Box der Rarity Collection als versiegeltes Produkt.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "runicduels-silver-jubilee-rarity-collection-booster-pack",
+        "quantity": 24
+      }
+    ]
+  },
+  {
+    "slug": "ember-sovereigns-structure-deck-en",
+    "title": "Ember Sovereigns Structure Deck (EN)",
+    "shortText": "Englische Sealed Version des Ember Sovereigns Decks.",
+    "price": "13,00 €",
+    "sku": "TCG-024",
+    "attributes": {
+      "Preis": "13.00",
+      "Spiel": "RunicDuels",
+      "Produktart": "Structure Deck",
+      "Sprache": "Englisch",
+      "Edition": "Ember Sovereigns",
+      "Deckgroesse": "40+ Karten",
+      "Spielbereit": "Ja"
+    },
+    "description": "Sealed Structure Deck fuer Ember Sovereigns in englischer Sprache.",
+    "content": []
+  },
+  {
+    "slug": "obsidian-embers-booster-pack",
+    "title": "Obsidian Embers Booster Pack",
+    "shortText": "Einzelner Booster zum direkten Preisvergleich.",
+    "price": "6,49 €",
+    "sku": "TCG-025",
+    "attributes": {
+      "Preis": "6.49",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Pack",
+      "Sprache": "Deutsch",
+      "Edition": "Obsidian Embers",
+      "Set": "Obsidian Embers"
+    },
+    "description": "Einzeln versiegelter Booster aus Obsidian Embers.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "obsidian-embers-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "paldea-ascendancy-booster-pack",
+    "title": "Paldea Ascendancy Booster Pack",
+    "shortText": "Einzelbooster fuer direkte Preisvergleiche.",
+    "price": "6,49 €",
+    "sku": "TCG-026",
+    "attributes": {
+      "Preis": "6.49",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Pack",
+      "Sprache": "Deutsch",
+      "Edition": "Paldea Ascendancy",
+      "Set": "Paldea Ascendancy"
+    },
+    "description": "Einzeln versiegelter Booster aus Paldea Ascendancy.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "paldea-ascendancy-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "aetherbeasts-151-booster-pack",
+    "title": "AetherBeasts 151 Booster Pack",
+    "shortText": "Einzelbooster aus dem 151 Set.",
+    "price": "8,49 €",
+    "sku": "TCG-027",
+    "attributes": {
+      "Preis": "8.49",
+      "Spiel": "AetherBeasts",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Crimson Violet 151",
+      "Set": "Crimson Violet 151"
+    },
+    "description": "Einzeln versiegelter Booster aus Crimson Violet 151.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "aetherbeasts-151-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "dominus-reclaimed-set-booster-pack",
+    "title": "Dominus Reclaimed Set Booster Pack",
+    "shortText": "Einzelner Set Booster fuer Vergleichsrechnungen.",
+    "price": "4,79 €",
+    "sku": "TCG-028",
+    "attributes": {
+      "Preis": "4.79",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Dominus Reclaimed",
+      "Set": "Dominus Reclaimed"
+    },
+    "description": "Einzeln versiegelter Set Booster aus Dominus Reclaimed.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "dominus-reclaimed-set-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "dominus-reclaimed-collector-booster-pack",
+    "title": "Dominus Reclaimed Collector Booster Pack",
+    "shortText": "Einzelner Collector Booster als Referenz.",
+    "price": "21,90 €",
+    "sku": "TCG-029",
+    "attributes": {
+      "Preis": "21.90",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Dominus Reclaimed",
+      "Set": "Dominus Reclaimed"
+    },
+    "description": "Einzeln versiegelter Collector Booster aus Dominus Reclaimed.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "dominus-reclaimed-collector-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "horizons-reforged-draft-booster-pack",
+    "title": "Horizons Reforged Draft Booster Pack",
+    "shortText": "Einzelner Draft Booster fuer Preisvergleiche.",
+    "price": "6,99 €",
+    "sku": "TCG-030",
+    "attributes": {
+      "Preis": "6.99",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Horizons Reforged",
+      "Set": "Horizons Reforged"
+    },
+    "description": "Einzeln versiegelter Draft Booster aus Horizons Reforged.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "horizons-reforged-draft-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "horizons-reforged-set-booster-pack",
+    "title": "Horizons Reforged Set Booster Pack",
+    "shortText": "Einzelner Set Booster fuer Preisvergleich.",
+    "price": "7,49 €",
+    "sku": "TCG-031",
+    "attributes": {
+      "Preis": "7.49",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Horizons Reforged",
+      "Set": "Horizons Reforged"
+    },
+    "description": "Einzeln versiegelter Set Booster aus Horizons Reforged.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "horizons-reforged-set-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "chronicles-of-eldermoor-set-booster-pack",
+    "title": "Chronicles of Eldermoor Set Booster Pack",
+    "shortText": "Einzelbooster als Preisreferenz fuer LOTR Set Produkte.",
+    "price": "6,49 €",
+    "sku": "TCG-032",
+    "attributes": {
+      "Preis": "6.49",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Chronicles of Eldermoor",
+      "Set": "Chronicles of Eldermoor"
+    },
+    "description": "Einzeln versiegelter Set Booster aus Chronicles of Eldermoor.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "chronicles-of-eldermoor-set-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "chronicles-of-eldermoor-collector-booster-pack",
+    "title": "Chronicles of Eldermoor Collector Booster Pack",
+    "shortText": "Einzelner Collector Booster als Preisreferenz.",
+    "price": "29,90 €",
+    "sku": "TCG-033",
+    "attributes": {
+      "Preis": "29.90",
+      "Spiel": "ArcaneConflux",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Chronicles of Eldermoor",
+      "Set": "Chronicles of Eldermoor"
+    },
+    "description": "Einzeln versiegelter Collector Booster aus Chronicles of Eldermoor.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "chronicles-of-eldermoor-collector-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "azure-eye-chronicles-booster-pack",
+    "title": "Azure-Eye Chronicles Booster Pack",
+    "shortText": "Einzelbooster fuer direkte Vergleiche mit Displays.",
+    "price": "6,49 €",
+    "sku": "TCG-034",
+    "attributes": {
+      "Preis": "6.49",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Pack",
+      "Sprache": "Englisch",
+      "Edition": "Azure-Eye Chronicles",
+      "Set": "Azure-Eye Chronicles"
+    },
+    "description": "Einzeln versiegelter Booster aus Azure-Eye Chronicles.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "azure-eye-chronicles-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "cinematic-gold-edition-booster-pack",
+    "title": "Cinematic Gold Edition Booster Pack",
+    "shortText": "Einzelbooster als Referenz fuer Boxpreise.",
+    "price": "3,99 €",
+    "sku": "TCG-035",
+    "attributes": {
+      "Preis": "3.99",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Pack",
+      "Sprache": "Deutsch",
+      "Edition": "Cinematic Gold Edition",
+      "Set": "Cinematic Gold Edition"
+    },
+    "description": "Einzeln versiegelter Booster aus Cinematic Gold Edition.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "cinematic-gold-edition-booster-pack",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "slug": "runicduels-silver-jubilee-rarity-collection-booster-pack",
+    "title": "RunicDuels Silver Jubilee Rarity Collection Booster Pack",
+    "shortText": "Einzelbooster fuer direkte Preisvergleiche zur Box.",
+    "price": "4,49 €",
+    "sku": "TCG-036",
+    "attributes": {
+      "Preis": "4.49",
+      "Spiel": "RunicDuels",
+      "Produktart": "Booster Pack",
+      "Sprache": "Deutsch",
+      "Edition": "Silver Jubilee Rarity Collection",
+      "Set": "Silver Jubilee Rarity Collection"
+    },
+    "description": "Einzeln versiegelter Booster aus der Silver Jubilee Rarity Collection.",
+    "content": [
+      {
+        "type": "booster-pack",
+        "content": "runicduels-silver-jubilee-rarity-collection-booster-pack",
+        "quantity": 1
+      }
+    ]
+  }
+]
